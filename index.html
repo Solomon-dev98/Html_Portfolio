@@ -22,7 +22,7 @@
       </nav>
       <div class="header-text">
         <p>Backend/Cloud Developer</p>
-        <h1>Hi, I'm <span>Solomon</span><br/>from Port Harcourt,<br>
+        <h1>Hi, I'm <span>Solomon</span><br/>
           Nigeria</h1>
       </div>
     </div>
@@ -37,11 +37,60 @@
           <img src="assets/images/user.png" alt="">
         </div>
         <div class="about-col-2">
-          <h1>About me</h1>
+          <h1 class="sub-title">About me</h1>
+          <p>
+            Solomon Olungweonwi <br />
+            Freelance Cloud Engineer | Architecting Scalable AWS Solutions for SMEs | Backend.
+
+            A passionate cloud advocate with a background in electrical engineering, Solomon specializes in designing secure, cost-optimized AWS infrastructures that help small businesses innovate and scale. His mission: to democratize enterprise-grade cloud tools for startups and SMEs, ensuring they thrive in a competitive digital landscape.
+          </p>
+
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>AWS cloud Developer</span><br>Scaling Businesses using AWS solutions</li>
+              <li><span>Backend Developer</span><br>Handling server-side logic</li>
+              <li><span>Database</span><br>Performing CRUD operations with MySQL, MongoDB, and Postgresql</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>2023 - 2025</span><br>Software engineeering Training at African Leadership Xcelerator, ALX.</li>
+              <li><span>2025 - present</span><br>Backend Developer for an online music school(Ninoproductionz), building the backend and Database for their learning Platform.</li>
+              <li><span>2025-present</span><br>Internship at HNG Empowering Tech</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>2015 - 2021</span><br>B.sc, Electrical Engineering from Rivers State University, Nigeria</li>
+              <li><span>2023 - 2025</span><br>Certificate of Completion, ALX softwware engineering program.</li>
+              <li><span>2025 - Present</span><br>ALX cloud computing in partnership with ALX</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+   
+    function opentab(tabname){
+      for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+      }
+      for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+    </script>
 </body>
 
 </html>
