@@ -20,7 +20,9 @@
           <li><a href="#">Services</a></li>
           <li><a href="#">Portfolio</a></li>
           <li><a href="#">Contact</a></li>
+          <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
         </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
       </nav>
       <div class="header-text">
         <p>Backend/Cloud Developer</p>
@@ -160,51 +162,91 @@
 
   <!-- -------------Portfolio------------- -->
 
- <div id="portfolio">
-  <div class="container">
-    <h1 class="sub-title">My Projects</h1>
-    <div class="work-list">
-      <div class="work">
-        <img src="assets/images/work-1.png" alt="">
-        <div class="layer">
-          <h3>Openlinks: E-commerce website</h3>
-          <p>
-            This Website lets you shop for different brand of laptops and also makes delivery within 2 days possible instead of long wait times for people in Nigeria
-          </p>
-          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+  <div id="portfolio">
+    <div class="container">
+      <h1 class="sub-title">My Projects</h1>
+      <div class="work-list">
+        <div class="work">
+          <img src="assets/images/work-1.png" alt="">
+          <div class="layer">
+            <h3>Openlinks: E-commerce website</h3>
+            <p>
+              This Website lets you shop for different brand of laptops and also makes delivery within 2 days possible
+              instead of long wait times for people in Nigeria
+            </p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="assets/images/work-2.png" alt="">
+          <div class="layer">
+            <h3>TaskSimplify: A modern To-do list Website</h3>
+            <p>
+              A modern to-do list webapp that makes it easier to plan your tasks with reminders including custom emails
+              and milestones that tracks your progress.
+            </p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="assets/images/work-3.png" alt="">
+          <div class="layer">
+            <h3>PlayLike-A-Pro</h3>
+            <p>
+              A music website that teaches you how to play the piano with lessons personalized to each student and
+              hosted on the cloud
+            </p>
+            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
         </div>
       </div>
-      <div class="work">
-        <img src="assets/images/work-2.png" alt="">
-        <div class="layer">
-          <h3>TaskSimplify: A modern To-do list Website</h3>
-          <p>
-            A modern to-do list webapp that makes it easier to plan your tasks with reminders including custom emails and milestones that tracks your progress.
-          </p>
-          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      <a href="#" class="btn">See more</a>
+    </div>
+  </div>
+
+  <!-- ---------Services ------------- -->
+  <div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          <h1 class="sub-title">Contact me</h1>
+          <p><i class="fa-solid fa-paper-plane"></i>solomonolungweonwi@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i>+2348135197640</p>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/solomonolungweonwi/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/solomon-softwareengineer/" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Solomon-dev98" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/NinoProductionz" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+          <a href="assets/images/Solomon Olungweonwi Resume.pdf" download class="btn btn2">Download CV</a>
         </div>
-      </div>
-      <div class="work">
-        <img src="assets/images/work-3.png" alt="">
-        <div class="layer">
-          <h3>PlayLike-A-Pro</h3> 
-          <p>
-           A music website that teaches you how to play the piano with lessons personalized to each student and hosted on the cloud
-          </p>
-          <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <div class="contact-right">
+          <form>
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="text" name="email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>
+          </form>
         </div>
       </div>
     </div>
-    <a href="#" class="btn">See more</a>
+    <div class="copyright">
+      <p>Copyright &copy; <span id="copyright-year">2025</span></i> Solomon Olungweowni <i class="fa-solid fa-heart"></i></p>
+    </div>
   </div>
- </div>
 
   <script>
     var tablinks = document.getElementsByClassName(" tab-links"); var
-            tabcontents=document.getElementsByClassName("tab-contents"); function opentab(tabname){ for(tablink of
-            tablinks){ tablink.classList.remove("active-link"); } for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab"); } event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab"); } </script>
+      tabcontents = document.getElementsByClassName("tab-contents"); function opentab(tabname) {
+        for (tablink of
+          tablinks) { tablink.classList.remove("active-link"); } for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+          } event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      } 
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
