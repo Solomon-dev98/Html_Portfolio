@@ -4,6 +4,9 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 body {
     background: #080808;
     color: #fff;
@@ -11,9 +14,10 @@ body {
 #header{
     width: 100%;
     height: 100vh;
-    /* background-image: url(assets/images/Professional_Photo.png); */
+    background-image: url(assets/images/bacgr_image.png);
     background-size: cover;
     background-position: center; 
+    background-attachment: fixed;
 }
 
 .container{
@@ -367,8 +371,15 @@ nav .fa-solid{
 
 @media only screen and (max-width: 600px){
     #header{
-        background-image: url(assets/images/Professional_Photo.png);
+        background-image: url(assets/images/bacgr_image.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        max-width: 600px;
+        width: 100%;
+        height: auto;
     }
+
     .header-text{
         margin-top: 100%;
         font-size: 16px;
@@ -378,7 +389,7 @@ nav .fa-solid{
         font-size: 30px;
     }
 
-    nav .fa-sollid{
+    nav .fa-solid{
         display: block;
         font-size: 25px;
     }
@@ -391,6 +402,7 @@ nav .fa-solid{
         height: 100vh;
         padding-top: 50px;
         z-index: 2;
+        Transition: right 0.5s;
     }
     nav ul li{
         display: block;
@@ -403,4 +415,36 @@ nav .fa-solid{
         left: 25px;
         cursor: pointer;
     }
+
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+
+    .about-col-2{
+        font-size: 14px;
+    }
+
+    .tablinks{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+
+    .copyright{
+       font-size: 14px; 
+    }
+}
+
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
 }
