@@ -14,12 +14,12 @@
     <div class="container">
       <nav>
         <img src="assets/images/logo_2.png" alt="logo" class="logo">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Contact</a></li>
+        <ul id="sidemenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
           <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
         </ul>
         <i class="fa-solid fa-bars" onclick="openmenu()"></i>
@@ -47,7 +47,7 @@
             Freelance Cloud Engineer | Architecting Scalable AWS Solutions for SMEs | Backend. </br></br>
 
             A passionate cloud advocate with a background in electrical engineering, Solomon specializes in designing
-            secure, cost-optimized AWS infrastructures that help small businesses innovate and scale. His mission: to
+            secure, cost-optimized AWS infrastructures that help small businesses innovate and scale. My mission: to
             democratize enterprise-grade cloud tools for startups and SMEs, ensuring they thrive in a competitive
             digital landscape.
           </p>
@@ -222,17 +222,19 @@
           <a href="assets/images/Solomon Olungweonwi Resume.pdf" download class="btn btn2">Download CV</a>
         </div>
         <div class="contact-right">
-          <form>
+          <form name="submit-to-google-sheet">
             <input type="text" name="Name" placeholder="Your Name" required>
-            <input type="text" name="email" placeholder="Your Email" required>
+            <input type="text" name="Email" placeholder="Your Email" required>
             <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
             <button type="submit" class="btn btn2">Submit</button>
           </form>
+          <span id="msg"></span>
         </div>
       </div>
     </div>
     <div class="copyright">
-      <p>Copyright &copy; <span id="copyright-year">2025</span></i> Solomon Olungweowni <i class="fa-solid fa-heart"></i></p>
+      <p>Copyright &copy; <span id="copyright-year">2025</span></i> Solomon Olungweowni <i
+          class="fa-solid fa-heart"></i></p>
     </div>
   </div>
 
@@ -244,8 +246,35 @@
             tabcontent.classList.remove("active-tab");
           } event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
-      } 
-      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+      }
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+    let sidemeu = document.getElementById("sidemenu");
+    function openmenu() {
+      sidemeu.style.right = "0";
+    }
+    function closemenu() {
+      sidemeu.style.right = "-200px";
+    }
+  </script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyL14TkqSpa0xMi4jnGNiOT9G-pUlR5_YI-W97RaboSXW6erdgid518hU_rOvv09Jr8/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          msg.innerHTML = "Message sent successfully",
+          setTimeout(function(){
+            msg.innerHTML = ""
+          }, 5000)
+          form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
   </script>
 </body>
 
